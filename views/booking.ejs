@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= subdomain.toUpperCase()%></title>
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+  rel="stylesheet"/>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><%=  subdomain.toUpperCase() %></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+
+  <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Complete your Payment</h5>
+            <p class="card-text">Please contact us at <%= contact.phone %> to complete your payment.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Travel Description</h5>
+            <p class="card-text"><%= destination.travel_description %></p>
+            <p class="card-text">From: <%= destination.starting_location %></p>
+            <p class="card-text">To: <%= destination.ending_location %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Travel Information Form</h5>
+            <form action="/submit-form" method="POST">
+              <div class="form-group">
+                <label for="nid_bin">NID/BIN</label>
+                <input type="text" class="form-control" id="nid_bin" name="nid_bin">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="tnx_id">TNX ID</label>
+                <input type="text" class="form-control" id="tnx_id" name="tnx_id">
+              </div>
+              <div class="form-group">
+                <label for="submission-time">Submission Time:</label>
+                <select class="form-control" id="submission-time" name="submission-time">
+                  <option value="1">6:00 AM</option>
+                  <option value="2">7:00 AM</option>
+                  <!-- Add more options here as needed -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="datepicker">Select a date:</label>
+                <input type="date" class="form-control" id="datepicker" name="date">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+></script>
+<script>
+  
+</script>
+</body>
+</html>
